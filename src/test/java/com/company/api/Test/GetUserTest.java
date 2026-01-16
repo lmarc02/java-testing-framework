@@ -21,6 +21,7 @@ public class GetUserTest extends BaseTest {
 
     @Test(dataProvider = "getUsersProviderMethod", dataProviderClass = DataProviders.class)
     public void getUser(Integer userId, String name) throws InterruptedException {
+        Thread.sleep(2000);
         UserClient userClient = new UserClient(ConfigReader.get("userBaseUri"));
 
         Response response = PollingUtils.pollUntil(() -> userClient.getUserClient(userId), Duration.ofSeconds(30), Duration.ofSeconds(2), r -> r.getBody().asString().contains(name));
@@ -31,6 +32,7 @@ public class GetUserTest extends BaseTest {
 
     @Test(dataProvider = "getUsersProviderMethod", dataProviderClass = DataProviders.class)
     public void getUser2(Integer userId, String name) throws InterruptedException {
+        Thread.sleep(2000);
         UserClient userClient = new UserClient(ConfigReader.get("userBaseUri"));
 
         Response response = PollingUtils.pollUntil(() -> userClient.getUserClient(userId), Duration.ofSeconds(30), Duration.ofSeconds(2), r -> r.getBody().asString().contains(name));
@@ -43,6 +45,7 @@ public class GetUserTest extends BaseTest {
     @Test(dataProvider = "getUsersProviderMethod", dataProviderClass = DataProviders.class)
 
     public void getUser3(Integer userId, String name) throws InterruptedException {
+        Thread.sleep(2000);
         UserClient userClient = new UserClient(ConfigReader.get("userBaseUri"));
 
         Response response = PollingUtils.pollUntil(() -> userClient.getUserClient(userId), Duration.ofSeconds(30), Duration.ofSeconds(2), r -> r.getBody().asString().contains(name));
@@ -54,6 +57,7 @@ public class GetUserTest extends BaseTest {
 
     @Test(dataProvider = "getUsersProviderMethod", dataProviderClass = DataProviders.class)
     public void getUser4(Integer userId, String name) throws InterruptedException {
+        Thread.sleep(2000);
         UserClient userClient = new UserClient(ConfigReader.get("userBaseUri"));
 
         Response response = PollingUtils.pollUntil(() -> userClient.getUserClient(userId), Duration.ofSeconds(30), Duration.ofSeconds(2), r -> r.getBody().asString().contains(name));
@@ -65,6 +69,7 @@ public class GetUserTest extends BaseTest {
 
     @Test(dataProvider = "getUsersProviderMethod", dataProviderClass = DataProviders.class)
     public void getUser5(Integer userId, String name) throws InterruptedException {
+        Thread.sleep(2000);
         UserClient userClient = new UserClient(ConfigReader.get("userBaseUri"));
 
         Response response = PollingUtils.pollUntil(() -> userClient.getUserClient(userId), Duration.ofSeconds(30), Duration.ofSeconds(2), r -> r.getBody().asString().contains(name));

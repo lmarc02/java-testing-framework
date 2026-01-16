@@ -26,7 +26,68 @@ import static org.hamcrest.text.IsEmptyString.emptyOrNullString;
 public class PostPetTest extends BaseTest {
 
     @Test
-    public void postPet() throws JsonProcessingException {
+    public void postPet() throws JsonProcessingException, InterruptedException {
+        Thread.sleep(2000);
+        PetClient petClient = new PetClient(ConfigReader.get("petBaseUri"));
+
+        PetRequest myPet = new PetRequest(
+                1,
+                new PetCategoryRequest(1,"Dog"),
+                new ArrayList<>(Arrays.asList("category string")),
+                "Max",
+                new ArrayList<>(Arrays.asList(new PetTagRequest(1,"tag string"))),
+                "true" );
+
+                Response response = petClient.createPet(myPet);
+                response.then()
+                        .statusCode(200)
+                        .body("id", not(emptyOrNullString()))
+                        .body("name", equalTo("Max"))
+                        .body("tags.name[0]", equalTo("tag string"));
+    }
+    @Test
+    public void postPet2() throws JsonProcessingException, InterruptedException {
+        Thread.sleep(2000);
+        PetClient petClient = new PetClient(ConfigReader.get("petBaseUri"));
+
+        PetRequest myPet = new PetRequest(
+                1,
+                new PetCategoryRequest(1,"Dog"),
+                new ArrayList<>(Arrays.asList("category string")),
+                "Max",
+                new ArrayList<>(Arrays.asList(new PetTagRequest(1,"tag string"))),
+                "true" );
+
+                Response response = petClient.createPet(myPet);
+                response.then()
+                        .statusCode(200)
+                        .body("id", not(emptyOrNullString()))
+                        .body("name", equalTo("Max"))
+                        .body("tags.name[0]", equalTo("tag string"));
+    }
+    @Test
+    public void postPet3() throws JsonProcessingException, InterruptedException {
+        Thread.sleep(2000);
+        PetClient petClient = new PetClient(ConfigReader.get("petBaseUri"));
+
+        PetRequest myPet = new PetRequest(
+                1,
+                new PetCategoryRequest(1,"Dog"),
+                new ArrayList<>(Arrays.asList("category string")),
+                "Max",
+                new ArrayList<>(Arrays.asList(new PetTagRequest(1,"tag string"))),
+                "true" );
+
+                Response response = petClient.createPet(myPet);
+                response.then()
+                        .statusCode(200)
+                        .body("id", not(emptyOrNullString()))
+                        .body("name", equalTo("Max"))
+                        .body("tags.name[0]", equalTo("tag string"));
+    }
+    @Test
+    public void postPet4() throws JsonProcessingException, InterruptedException {
+        Thread.sleep(2000);
         PetClient petClient = new PetClient(ConfigReader.get("petBaseUri"));
 
         PetRequest myPet = new PetRequest(
