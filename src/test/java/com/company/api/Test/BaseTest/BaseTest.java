@@ -10,6 +10,7 @@ import org.testng.annotations.BeforeTest;
 import java.util.Properties;
 
 public class BaseTest {
+
     @BeforeTest
     public void setup(){
         System.getProperty("env", "dev");
@@ -18,7 +19,6 @@ public class BaseTest {
 
     @AfterClass
     public void tearDown() {
-        RestAssured.reset();
     }
 
 }

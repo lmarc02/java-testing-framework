@@ -10,11 +10,16 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import static io.restassured.RestAssured.given;
 
 public class PetClient {
+    private final String baseUri;
 
+    public PetClient(String baseUri) {
+        this.baseUri = baseUri;
+    }
     public Response createPet(PetRequest petObj) throws JsonProcessingException {
 
         String json = Utils.getStringJsonResponse(petObj);
         Response response =  given()
+                .baseUri(baseUri)
                 .contentType("application/json")
                 .body(json)
                 .when()

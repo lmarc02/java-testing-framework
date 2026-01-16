@@ -11,6 +11,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import java.util.ArrayList;
@@ -24,14 +25,10 @@ import static org.hamcrest.text.IsEmptyString.emptyOrNullString;
 @Listeners({ TestListener.class})
 public class PostPetTest extends BaseTest {
 
-    @BeforeClass
-    public void setUp() {
-        RestAssured.baseURI = ConfigReader.get("petBaseUri");
-    }
-
     @Test
     public void postPet() throws JsonProcessingException {
-        PetClient petClient = new PetClient();
+        PetClient petClient = new PetClient(ConfigReader.get("petBaseUri"));
+
         PetRequest myPet = new PetRequest(
                 1,
                 new PetCategoryRequest(1,"Dog"),

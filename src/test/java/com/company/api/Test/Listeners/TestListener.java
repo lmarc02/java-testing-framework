@@ -8,24 +8,22 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onStart(ITestContext context) {
-        System.out.println("[TESTNG] Suite started: " + context.getSuite().getName());
-
-
+        System.out.println("[TESTNG] Suite started: " + context.getSuite().getName() + "[THREAD]" + Thread.currentThread().getName());
         }
 
     @Override
     public void onFinish(ITestContext context) {
-        System.out.println("[TESTNG] Suite finished: " + context.getSuite().getName());
+        System.out.println("[TESTNG] Suite finished: " + context.getSuite().getName() + "[THREAD]" + Thread.currentThread().getName());
     }
 
     @Override
     public void onTestStart(ITestResult result) {
-        System.out.println("[TESTNG] Test started: " + result.getName());
+        System.out.println("[TESTING] Test started: " + result.getName() + "[THREAD]" + Thread.currentThread().getName());
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        System.out.println("[PASS] " + result.getName());
+        System.out.println("[PASS] " + result.getName()+ "[THREAD]" + Thread.currentThread().getName());
     }
 
     @Override
@@ -38,7 +36,7 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        System.out.println("[SKIP] " + result.getName());
+        System.out.println("[SKIP] " + result.getName() + "[THREAD]" + Thread.currentThread().getName());
     }
 
 }
