@@ -10,6 +10,7 @@ A REST API testing framework built with Java, TestNG, and REST-assured.
 - REST-assured 6.0.0
 - Jackson (JSON serialization)
 - Allure Reports 2.26.0
+- Lombok 1.18.30 (reduces boilerplate)
 
 ## Project Structure
 
@@ -42,6 +43,12 @@ src/test/resources/config/
 
 - Java 18+
 - Maven 3.6+
+
+## IDE Setup
+
+### IntelliJ IDEA
+1. Install the Lombok plugin: **File → Settings → Plugins → Search "Lombok" → Install**
+2. Enable annotation processing: **File → Settings → Build, Execution, Deployment → Compiler → Annotation Processors → Enable annotation processing**
 
 ## Configuration
 
@@ -87,3 +94,10 @@ Or generate report only:
 ```bash
 mvn allure:report
 ```
+
+## Writing Tests
+
+### Building Request Objects
+Models use Lombok's `@Builder` for readable test data:
+
+
