@@ -12,6 +12,7 @@ public class UserClient {
 
     public static Response getUserClient(Integer id) {
          String xApiKey = System.getProperty("xApiKey");
+
         Response response = given()
                 .spec(RequestSpecFactory.getSpec())
                 .header("x-api-key", xApiKey)
@@ -30,8 +31,8 @@ public class UserClient {
 
         return response;
     }
+
     public static Response getUserClient(Integer userId, Duration timeOutDuration, Duration poolingDuration) throws InterruptedException {
         return PollingUtils.pollUntil(() -> UserClient.getUserClient(userId), timeOutDuration, poolingDuration, r -> r.getStatusCode() == 200);
-
     }
 }

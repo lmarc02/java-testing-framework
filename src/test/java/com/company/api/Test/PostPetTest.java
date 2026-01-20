@@ -9,6 +9,7 @@ import com.company.api.Models.PetTagRequest;
 import com.company.api.UserClient.PetClient;
 import com.company.api.Utils.ConfigReader;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import io.qameta.allure.Allure;
 import io.restassured.response.Response;
 import org.testng.annotations.*;
 
@@ -59,6 +60,8 @@ public class PostPetTest extends BaseTest {
                         .body("id", not(emptyOrNullString()))
                         .body("name", equalTo("Max"))
                         .body("tags.name[0]", equalTo("tag string"));
+
+        Allure.addAttachment("Response Body", "application/json", response.body().prettyPrint());
     }
 
 }
