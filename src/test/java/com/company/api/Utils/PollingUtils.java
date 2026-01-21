@@ -2,6 +2,7 @@ package com.company.api.Utils;
 
 import java.time.Duration;
 import java.time.Instant;
+import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 public class PollingUtils {
@@ -9,7 +10,7 @@ public class PollingUtils {
             Supplier<T> supplier,
             Duration timeout,
             Duration interval,
-            java.util.function.Predicate<T> condition) throws InterruptedException {
+            Predicate<T> condition) throws InterruptedException {
 
         Instant end = Instant.now().plus(timeout);
 

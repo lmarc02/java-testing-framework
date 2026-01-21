@@ -5,7 +5,7 @@ import io.restassured.response.Response;
 import org.testng.annotations.BeforeSuite;
 
 public class BaseTest {
-    ThreadLocal<Response> response = new ThreadLocal<>();
+    //ThreadLocal<Response> response = new ThreadLocal<>();
 
     @BeforeSuite
     public void suiteSetup() {
