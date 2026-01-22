@@ -18,6 +18,7 @@ public class UserClient {
                 .header("x-api-key", xApiKey)
                 .when()
                 .get("/user/" + id);
+        System.out.println(response.body().prettyPrint());
 
         return response;
     }
@@ -28,7 +29,7 @@ public class UserClient {
                 .header("x-api-key", xApiKey)
                 .when()
                 .get("/user/" + id);
-
+        System.out.println(response.body().prettyPrint());
         return response;
     }
 

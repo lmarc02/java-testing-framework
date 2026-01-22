@@ -37,7 +37,6 @@ public class GetUserTest extends BaseTest {
         Thread.sleep(2000);
 
         Response response = UserClient.getUserClient(userId, Duration.ofSeconds(30), Duration.ofSeconds(2));
-        response.body().prettyPrint();
 
         Allure.addAttachment("Response Body", "application/json", response.body().prettyPrint());
         }
