@@ -1,4 +1,4 @@
-package com.company.api.BaseTest;
+package com.company.api.baseTest;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;

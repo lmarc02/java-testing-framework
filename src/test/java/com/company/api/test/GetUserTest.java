@@ -1,11 +1,11 @@
-package com.company.api.Test;
+package com.company.api.test;
 
-import com.company.api.BaseTest.BaseTest;
-import com.company.api.BaseTest.RequestSpecFactory;
-import com.company.api.Listeners.TestListener;
-import com.company.api.UserClient.UserClient;
-import com.company.api.Utils.ConfigReader;
-import com.company.api.Utils.DataProviders;
+import com.company.api.baseTest.BaseTest;
+import com.company.api.baseTest.RequestSpecFactory;
+import com.company.api.listeners.TestListener;
+import com.company.api.client.UserClient;
+import com.company.api.utils.ConfigReader;
+import com.company.api.utils.DataProviders;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
@@ -38,7 +38,7 @@ public class GetUserTest extends BaseTest {
 
         Response response = UserClient.getUserClient(userId, Duration.ofSeconds(30), Duration.ofSeconds(2));
 
-        Allure.addAttachment("Response Body", "application/json", response.body().prettyPrint());
+        //Allure.addAttachment("Response Body", "application/json", response.body().prettyPrint());
         }
 
     @Test(dataProvider = "getUsersProviderMethod",
