@@ -13,8 +13,6 @@ import io.qameta.allure.Allure;
 import io.restassured.response.Response;
 import org.testng.annotations.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static org.hamcrest.Matchers.equalTo;
